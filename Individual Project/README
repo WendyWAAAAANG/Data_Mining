@@ -1,0 +1,26 @@
+Compiler Environment: VSCode -- Python 3.9.12, MacBook_Pro_2020
+
+"Dataset" folder used to store "training.csv", "test.csv" and "test_<SVM>.csv". And "test_<SVM>.csv" is the prediction result of BEST model SVM.
+
+"WorkFlow.ipynb" used to do explory data analysis, feature engineering, model fitting, model validation and prediction.
+It import all py file in Model_Code.
+
+There are 10 files in the “Model_Code” folder, include 9 model files and 1 file for analysis models.
+Files include: KNN.py, Bayes.py, Perceptron.py, DecisionTree.py, GBDT.py, LogisticRegression.py, RandomForest.py, SVM.py, XGBoost.py, Score.py.
+
+· all models are capsulated in class, when calling models, just need to create an object, and call its 'get_result' method to get predict result.
+
+· KNN.py: implement the KNN model by myself. In 'WorkFlow' file, just import this file and call this function, it will return predict result for single saample.
+· Bayes.py: implement the Bayes model by myself. In 'WorkFlow' file, import it and pass whole dataset, it will return predict result for whole valid set.
+· Perceptron.py: implement the Perceptron Model by myself. In 'WorkFlow' file, we can set learning rate and number of iterations. It can print out result of whole valid set.
+
+· DecisionTree.py: implement the Decision Tree by using sklearn package, and using OrdinalEncoder encode data. Finally check overfitting score for decision tree, as well as plot its graph.
+· GBDT.py: import the Gradient Boosting Decision Tree Model from sklearn package, and return predict result of whole valid set.
+· LogisticRegreesion.py: import the Logistic Regression Model from sklearn package, and return predict result of whole valid set.
+· RandomForest.py: import the Random Forest Model from sklearn package, and return predict result of whole valid set.
+· SVM.py: import the SVM model from sklearn package, and we can set both 'OVO' or 'OVR' strategies to train model, it will return predict result for whole valid set.
+· XGBoost.py: import the eXtreme Gradient Boosting Model from sklearn package, and return predict result of whole valid set.
+· EM.py: contains a function “model_ensemble”to construct the ensemble model and running the code will print the score of the ensemble model.
+
+· Score.py: A class used to calculate confusion matrix, accuracy, recall, F1-score and precision of each model. And recall, F1-score, precision all include 'micro', 'macro' and 'weighted' three mode.
+

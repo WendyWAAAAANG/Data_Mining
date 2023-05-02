@@ -1,0 +1,69 @@
+1 数据特点：
+    多分类问题，y共有三类：unacc, acc, good
+    自变量 -- 六维，均为离散型变量，取值大于2种
+    
+2 数据预处理：
+    在预处理之后划分训练集，测试集
+    训练集预处理，随后进行训练数据和验证集划分（spilt）
+    先编码后将y分开
+    test数据也需要编码
+    !!分割数据集时，不需要对y编码。
+    ！！朴素贝叶斯不需要任何编码
+
+!!!!preprocessing:
+model_smote
+
+
+3 变量声明：
+data -- raw data from data.csv
+data_test -- raw data from test_data.csv
+x -- data without y
+y -- y in data
+data_merge -- x + data_test, all independent
+
+feature_list -- feature of x
+total_list -- feature of x+y
+labels -- all possible values of y
+
+x_test_encoder -- x_test after encoding, array.
+ans_test_df -- x_test after encoding, dataframe.
+data_encoder -- data after encoding.
+x_encoder -- data_encoder without y
+y_encoder -- y in data_encoder
+x_train
+x_validation
+y_train
+y_validation
+data_train_encoder -- training data after encoding and separate set
+data_validate_encoder -- validation data after encoding and separate set
+x_train_np
+y_train_np
+x_validate_np
+y_validate_np
+y_train_l
+y_validate_l
+
+4 修改架构：每个函数写在不同py文件内，最终用一个notebook调用并测试。
+5 ！！！新想法：用类定义各种函数
+
+6 normalization
+#proses untuk melakukan normalisasi data agar data yang digunakan tidak memiliki penyimpangan yang besar
+from sklearn.preprocessing import StandardScaler
+sc = StandardScaler()
+#data yang digunakan untuk dinormalisasi adalah data x_train dan x_test
+x_train = sc.fit_transform(x_train)
+x_test = sc.transform(x_test)
+web: https://www.kaggle.com/code/comefred/uts-machine-learning-18-01-53-0083
+
+7 visualization
+web: https://www.kaggle.com/code/narminhumbatli/car-evaluation-random-forest-decision-tree-svm
+
+8 perceptron
+https://github.com/yashgoyal24/Used-Car-Price-Prediction
+
+9 decision tree
+web: https://github.com/sepehrasgarian/-Decision-Tree-Classification/blob/master/Decision%20Tree.py
+
+10 几个评分的介绍
+web: https://zhuanlan.zhihu.com/p/147663370
+
